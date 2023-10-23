@@ -6,7 +6,7 @@ public class Ex04 {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		String arrow = "↑";
+		String arrow = "↑"; 
 		String space = "_";
 		int distance;
 		
