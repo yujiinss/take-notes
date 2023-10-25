@@ -28,7 +28,7 @@ public class Quiz1 {
 		return answer;
 	}
 	
-	static int remainder(int n1, int n2) {
+	static int remainder(int n1, int n2) {//(100,6)
 		int answer = 0;
 		answer = n1 % n2;
 		return answer;
