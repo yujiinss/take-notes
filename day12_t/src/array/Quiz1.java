@@ -74,7 +74,12 @@ public class Quiz1 {
 
 
 
-
+//static void getNumber(int[] arr) {
+//Random ran = new Random();
+//for (int i = 0; i < arr.length; i++) {
+//	arr[i] = ran.nextInt(45) + 1;
+//}
+//}
 
 
 
