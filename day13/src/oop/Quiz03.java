@@ -60,7 +60,9 @@ class TV {
 			System.out.println("음소거입니다");
 		}
 	}
-	int
+	boolean power() {
+		
+	}
 	
 	
 	
