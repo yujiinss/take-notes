@@ -96,17 +96,3 @@ public class Quiz1 {
 	}
 }	// end of class Quiz1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
