@@ -44,8 +44,8 @@ public class Ex07 {
 		}
 		else {						// 파일이 이미 있으면 내용을 불러와서 리스트에 담는다
 			Scanner sc = new Scanner(f);
-			while(sc.hasNextLine()) {
-				String[] arr = sc.nextLine().split(" : ");	
+			while(sc.hasNextLine()) { // 다음 줄이 있는 동안 반복을 돌린다
+				String[] arr = sc.nextLine().split(" : ");	// split 
 				Phonebook ob = new Phonebook(arr[0], arr[1]);
 				list.add(ob);
 			}
@@ -53,7 +53,7 @@ public class Ex07 {
 		}
 		
 		System.out.println("=== 출력 ===");
-		list.forEach(ob -> System.out.println(ob));
+		list.forEach(ob -> System.out.println(ob)); //forEach 반복문
 		System.out.println("=== 출력 끝 ===");
 		
 		Scanner sc = new Scanner(System.in);

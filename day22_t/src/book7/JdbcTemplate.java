@@ -36,6 +36,13 @@ public class JdbcTemplate {
 		return conn;
 	}
 
+	/**
+	 * @param <T> : DTO Class , 단일DTO 클래스
+	 * @param sql :SQL to run, 실행 할 SQL
+	 * @param rowMapper : how to mapping Relational to Object in JAVA(lambda)
+	 * 					: select의 결과를 릴레이셔에서 자바 객체로 어떻게 맵핑할지 함수를 가지는 람다 객체
+	 * @return : Single DTO Object , 단일DTO 객체를 반환
+	 */
 	public <T> T queryForObject(String sql, RowMapper<T> rowMapper) {
 		T ob = null;
 		try {
@@ -43,8 +50,9 @@ public class JdbcTemplate {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
+		    if(rs.next()) {
 			ob = rowMapper.mapper(rs);
-			
+		    }
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {		
@@ -56,7 +64,13 @@ public class JdbcTemplate {
 		}
 		return ob;
 	}
-	
+	/**
+	 * @param <T> : DTO Class , 단일DTO 클래스
+	 * @param sql :SQL to run, 실행 할 SQL
+	 * @param rowMapper : how to mapping Relational to Object in JAVA(lambda)
+	 * 					: select의 결과를 릴레이셔에서 자바 객체로 어떻게 맵핑할지 함수를 가지는 람다 객체
+	 * @return : Single DTO Object , 단일DTO 객체를 반환
+	 */
 	public <T> ArrayList<T> queryForList(String sql, RowMapper<T> rowMapper) {
 		ArrayList<T> list = new ArrayList<>();
 		
@@ -79,7 +93,12 @@ public class JdbcTemplate {
 		}
 		return list;
 	}
-	
+	/**
+	 * 
+	 * @param sql : SQL to run, 실행할 SQL
+	 * @param args  PrepareStatement에 sql을 올려둔 후 ?에 해당하는 값들을 가변인자로 전달
+	 * @return : SQL(insert/update/delete)에 영향을 받은 줄 수 (count of affected row, int)
+	 */
 	public int update(String sql, Object... args) {
 		int seq = 0;
 		int row = 0;

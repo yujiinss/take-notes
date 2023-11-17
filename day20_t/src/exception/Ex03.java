@@ -26,7 +26,7 @@ public class Ex03 {
 				if(0 <= num && num <= 100) {
 					break;
 				}
-				MyException e = new MyException();
+				MyException e = new MyException(); 
 				throw e;				// 내가 만든 예외 객체를 던진다 (catch블록이 받을 수 있도록)
 			} catch(MyException e) {	// catch에서는 try내부에서 던진(throw) 예외를 받아서 처리한다
 				System.out.println(e);

@@ -31,7 +31,7 @@ public class Ex06 {
 		}
 		
 		FileWriter fw = new FileWriter(f1);
-		fw.append("Hello ");
+		fw.append("Hello "); // append 
 		fw.append("world\n");
 		fw.flush();
 		fw.close();

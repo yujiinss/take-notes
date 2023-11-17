@@ -21,7 +21,7 @@ public class BookDAO {
 		try {
 			// Oracle DB에 접속하기 위한 전용 드라이버
 			Class.forName("oracle.jdbc.driver.OracleDriver");	
-			conn = DriverManager.getConnection(url, user, password);
+			conn = DriverManager.getConnection(url, user, password); // 접속을 하는 것
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println("생성자 예외 발생 : " + e);
 			e.printStackTrace();
@@ -71,10 +71,10 @@ public class BookDAO {
 
 	public int deleteBook(String name) throws SQLException {
 		int row = 0;
-		String sql = "delete book where name = ?";
+		String sql = "delete book where name = "?";
 		
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, name);
+		pstmt.setString(1, name); // 1은 몇번째 물음표인지
 		row = pstmt.executeUpdate();
 		
 		return row;
