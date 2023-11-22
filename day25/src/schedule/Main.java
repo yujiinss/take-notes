@@ -1,5 +1,6 @@
 package schedule;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -7,15 +8,39 @@ import java.util.Scanner;
 
 public class Main {
 	
+	static SimpleDateFormat inputFormatter = new SimpleDateFormat("yyyy-MM-dd");
+	static SimpleDateFormat outputFormatter = new SimpleDateFormat("yyyy년 MM월 dd일");
+	
 	// 사용자한테 입력값을 받는다
+	public static void addSchedule(Scanner sc) throws Exception {
+		
+		ScheduleDTO dto = new ScheduleDTO();// 객체를 만듦
+		System.out.println("일정명을 입력하세요");
+		dto.setTitle(sc.nextLine());
+		
+		System.out.println("일정 날짜를 입력하세요");
+		String s1 = sc.nextLine();
+		
+		Date d1 = inputFormatter.parse(s1);
+		
+		java.sql.Date d2 = new java.sql.Date(d1.getTime());
+		
+		dto.setStart_date(d2);
+		
+		// 문자열 -> (sdf) -> util.Date -> sql.Date
+		
+		
+		
+	}
 	
-	
+
+
+
 
 public static void main(String[] args)  {
 	Handler handler = new Handler();
 	Scanner sc = new Scanner(System.in);
-	SimpleDateFormat inputFormatter = new SimpleDateFormat("yyyy-MM-dd");
-	SimpleDateFormat outputFormatter = new SimpleDateFormat("yyyy년 MM월 dd일");
+	
 	Date date = null; //java.util.Date는 java.sql.Date의 슈퍼클래스이다
 	
 	int menu =-1;
@@ -89,8 +114,5 @@ public static void main(String[] args)  {
 	}
 }
 
-	private static Object addSchedule(Scanner sc) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 }

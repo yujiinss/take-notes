@@ -30,7 +30,7 @@ public class PhonebookDAO {
 	// 전체 목록 불러오기
 	public List<PhonebookDTO> selectList() throws Exception {
 
-		ArrayList<PhonebookDTO> list = new ArrayList<>(); // 반환값 준비
+		ArrayList<PhonebookDTO> list = new ArrayList<>(); // 반환값 준비 // 우리가 채우는 list
 		String sql = "select * from phonebook order by favorite desc, name"; // 실행할 쿼리문 준비
 
 		conn = getConnection();

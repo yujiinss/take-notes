@@ -31,7 +31,7 @@ public class Main {
 		
 		Handler handler = new Handler(); // Handler함수를 불어오면 담을 객체를 생성
 		Scanner sc = new Scanner(System.in);
-		List<PhonebookDTO> list = null;
+		List<PhonebookDTO> list = null; // 값을 받아와서 담는 list
 		PhonebookDTO ob = null;
 		int menu = -1, row; 
 		String name, pnum;
