@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01.html</title>
+</head>
+<body>
+
+    <h1>input 연습</h1>
+    <hr>
+
+    <ul>
+        <li>input 태그는 대부분  form태그 내부에 배치하여 사용한다</li>
+        <li>input 태그는 사용자 입력 편의성을 위해 type을 변경할 수 있다</li>
+        <li>type을 지정하지 않으면 기본은 type="text"이다</li>
+        <li>form 태그의 action 속성은 입력값을 보낼 서버의 경로이다</li>
+    </ul>
+    <!--vscode 주석처리하기 : ctrl +k,c-->
+    <!--vscode 주석해제하기 : ctrl +k,u-->
+
+    <form action="https://search.naver.com/search.naver">
+        <p><input type="text" name="query" placeholder="네이버 검색어 입력"
+            required="required"></p>
+            <!--required 필수값이라는 뜻/ 이름과 값이 같을 경우에는 required만 적어도 됨-->
+            <!--required autofocus는 바로 커서가 창에 뜨도록 하는 것-->
+            <!--autocomplete="off"는 자동완성 끄게 하는 방법-->
+            <!--<p><input type="text" name="where" placeholder="image"></p>-->
+        <p>
+           <label> <input type="radio" name="where" value="image">이미지</label>
+           <label><input type="radio" name="where" value="news">뉴스</label> 
+            <input type="radio" name="where" value="kin">지식in  
+            <!--label을 사용하면 동그라미가 아닌 글자를 눌러도 선택이 되어짐-->
+        </p>
+        <p>
+            <select name="where">
+                <option value="">통합검색</option>
+                <option value="image">이미지</option>
+                <option value="news">뉴스</option>
+                <option value="kin">지식in</option>
+            </select>
+        </p>
+        <!--제출하기 버튼 검색하기 버튼에 이용-->
+        <p><input type="submit" value="검색"></p>
+    </form>
+    
+</body>
+</html>
