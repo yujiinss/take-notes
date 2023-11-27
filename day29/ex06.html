@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*html 문서의 뼈대를 보기 위한 목적*/
+        div.nav{ /*메뉴 내비게이터의 틀 역할을 하는 div*/
+            background-color: black; /*배경*/
+            width: 900px;               /*너비*/
+            height: 40px;               /*높이*/
+            margin: 50px auto;          /*여백(가운데 정렬)*/
+
+        }
+        ul{
+            display: flex;      /*세로로 배치되는 요소를 가로로 배치하고 싶을 때*/
+            list-style: none; /*항목 나열할 때 사용되는 점을 없앤다*/
+            padding-left: 0;  /*점이 배치되는 왼쪽 여백을 없앤다*/
+        }
+        ul > li{
+            color:  white;
+            background-color: #4d0102;
+            flex: 1;/*간격을 일정하게 맞춰 나누어 줌*/
+            border: 1px solid #222;
+            font-size: 13px;/*기본은 16px*/
+            font-weight: bold;
+            line-height:  40px;
+            text-align: center;
+            border-top: 2px solid #a30b0d; /*평소에는 상단 테두리가 검붉은 색*/
+        }
+        ul > li:hover{
+            border-top: 3px solid red;
+            cursor: pointer; /* 마우스 올리면 모양을 손가락 모양으로 바꾼다 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>flex 활용</h1>
+    <hr>
+    <div class="nav">
+    <!--class이름으로 구분함 각 스타일을 부여하기 위해-->
+    <!--id는 고유한 것으로 문서 안에서 고유값으로 만듦-->
+        <ul>
+            <li>홈</li>
+            <li>통합 DB 메인</li>
+            <li>정복자 시뮬레이터</li>
+            <li>스킬 시뮬레이터</li>
+            <li>지도</li>
+            <li>위상</li>
+            <li>아이템</li>
+        </ul>
+    </div>
+</body>
+</html>
